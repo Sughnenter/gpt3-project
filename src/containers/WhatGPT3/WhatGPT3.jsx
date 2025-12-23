@@ -1,7 +1,7 @@
 import React from 'react'
 import './WhatGPT3.css'
 
-export function WhatGPT3 () {
+function WhatGPT3 () {
   return (
     <div>
       WhatGPT3
@@ -9,3 +9,4 @@ export function WhatGPT3 () {
   )
 }
 
+export default WhatGPT3

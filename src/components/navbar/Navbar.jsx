@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 
-export function Navbar () {
+function Navbar () {
   return (
     <div>
       Navbar
@@ -9,3 +9,4 @@ export function Navbar () {
   )
 }
 
+export default Navbar

@@ -1,7 +1,7 @@
 import React from 'react'
 import './CTA.css'
 
-export function CTA () {
+function CTA () {
   return (
     <div>
       CTA
@@ -9,3 +9,4 @@ export function CTA () {
   )
 }
 
+export default CTA

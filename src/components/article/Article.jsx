@@ -1,7 +1,7 @@
 import React from 'react'
 import './Article.css'
 
-export function Article () {
+function Article () {
   return (
     <div>
       Article
@@ -9,3 +9,4 @@ export function Article () {
   )
 }
 
+export default Article

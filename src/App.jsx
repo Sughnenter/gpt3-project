@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import {Blog, Features, Footer, Header, Possibility, WhatGPT3} from './containers'
-import {CTA, Brand, Navbar} from '/components'
+import {CTA, Brand, Navbar} from './components'
 
 function App() {
   
