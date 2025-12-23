@@ -49,7 +49,7 @@ a {
   );
 }
 
-gradient__text {
+.gradient__text {
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

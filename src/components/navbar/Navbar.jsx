@@ -13,10 +13,12 @@ function Menu () {
       <p><a href='#blog'>Library</a></p>
     </>
   )
+  //The menu component contains all the links for the menu 
 }
 
 function Navbar () {
   const [toggleMenu, setToggleMenu] = useState(false)
+  //The use state is for the toggle menu icon
   return (
     <div className='gpt3__navbar'>
       <div className='gpt3__navbar-links'>
@@ -35,6 +37,7 @@ function Navbar () {
         {toggleMenu 
         ? <RiCloseLine color='#fff' size={27} onClick={() => setToggleMenu(false)} />
         : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />
+        //renders the menu line from react-icons
         }
         {toggleMenu && (
           <div className='gpt3__navbar-menu_container scale-up-center'>
@@ -46,6 +49,7 @@ function Navbar () {
               </div>
             </div>
           </div>
+          //displays the elements of the toggle menu when the hamburger menu is clicked
         )}
       </div>
     </div>
