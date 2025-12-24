@@ -4,6 +4,17 @@
   align-items: center;
   padding: 2rem 6rem;
 }
+/* Keep navbar on top and visible even if a parent element has .reveal styles */
+.gpt3__navbar {
+  position: relative;
+  z-index: 1200;
+}
+
+/* If an ancestor accidentally has .reveal (opacity:0), ensure navbar remains visible */
+.reveal .gpt3__navbar {
+  opacity: 1 !important;
+  transform: none !important;
+}
 .gpt3__navbar-links {
   display: flex;
   flex: 1;
@@ -59,8 +70,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
-  left: 1153px;
-  top: 55px;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -131,7 +140,6 @@
   .gpt3__navbar-menu_container-links-sign {
     display: block;
   }
-
 
   /* 
   display none hides the element for ths screen size
