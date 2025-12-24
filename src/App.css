@@ -8,61 +8,63 @@
 body {
   background: var(--color-bg);
 }
+
 a {
   color: unset;
   text-decoration: none;
 }
+
 .gradient__bg {
-  /* ff 3.6+ */
   background: -moz-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 100%
+    rgba(4, 12, 24, 1) 25%
   );
 
   /* safari 5.1+,chrome 10+ */
   background: -webkit-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 100%
+    rgba(4, 12, 24, 1) 25%
   );
 
   /* opera 11.10+ */
   background: -o-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 100%
+    rgba(4, 12, 24, 1) 25%
   );
 
   /* ie 10+ */
   background: -ms-radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 100%
+    rgba(4, 12, 24, 1) 25%
   );
 
   /* global 92%+ browsers support */
   background: radial-gradient(
     circle at 3% 25%,
     rgba(0, 40, 83, 1) 0%,
-    rgba(4, 12, 24, 1) 100%
+    rgba(4, 12, 24, 1) 25%
   );
 }
 
 .gradient__text {
   background: var(--gradient-text);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .section__padding {
   padding: 4rem 6rem;
 }
+
 .section__margin {
   margin: 4rem 6rem;
 }
+
 .scale-up-center {
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
@@ -79,6 +81,7 @@ a {
     transform: scale(1);
   }
 }
+
 @keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);
@@ -89,17 +92,61 @@ a {
     transform: scale(1);
   }
 }
+
 @media screen and (max-width: 700px) {
-  .section__padding,
-  .section__margin {
+  .section__padding {
     padding: 4rem;
+  }
+
+  .section__margin {
     margin: 4rem;
   }
 }
 @media screen and (max-width: 550px) {
-  .section__padding,
-  .section__margin {
+  .section__padding {
     padding: 4rem 2rem;
+  }
+
+  .section__margin {
     margin: 4rem 2rem;
   }
 }
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variants */
+.reveal[data-animation="fade-left"] {
+  transform: translateX(-20px);
+}
+.reveal[data-animation="fade-right"] {
+  transform: translateX(20px);
+}
+.reveal.active[data-animation="fade-left"],
+.reveal.active[data-animation="fade-right"] {
+  transform: translateX(0);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.active {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Usage: add class="reveal" to elements. Optional data attributes:
+   data-delay="200ms" data-duration="800ms" data-animation="fade-left|fade-right" data-once="false" */
