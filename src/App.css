@@ -119,11 +119,12 @@ a {
   transition-property: opacity, transform;
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+  /* Apply will-change only when element is active to reduce memory usage */
+  will-change: opacity, transform;
 }
 
 /* Variants */
